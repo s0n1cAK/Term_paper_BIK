@@ -22,3 +22,5 @@
           - "8443:443"
         volumes:
           - "/host/rancher:/var/lib/rancher"
+      vars:
+        ansible_python_interpreter: /bin/python3
