@@ -2,7 +2,7 @@
   gather_facts: False
   tasks: 
     - name: install python-docker
-      shell: sudo python3 -m pip install docker-py
+      shell: sudo python3 -m pip install docker-py docker
 
     - name: launch rancher
       community.docker.docker_container:
