@@ -1,0 +1,26 @@
+- hosts: all
+  gather_facts: False
+  become: True
+  tasks: 
+
+    - name: install repo
+      yum: 
+        name: 
+          - yum-utils
+          - epel-release
+          - python3 
+        state: latest 
+
+    - name: add repo
+      yum_repository: 
+        name: docker
+        baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: isntall docker 
+      yum: 
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: latest
+      
