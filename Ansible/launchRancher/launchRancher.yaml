@@ -1,6 +1,9 @@
 - hosts: rancher
   gather_facts: False
   tasks: 
+    - name: install python-docker
+      command: python3 -m pip install docker-py
+
     - name: launch rancher
       community.docker.docker_container:
         name: rancher
