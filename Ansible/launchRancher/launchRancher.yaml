@@ -3,6 +3,12 @@
   tasks: 
     - name: install python-docker
       shell: pip3 install docker-py docker
+      
+    - name: start daemon docker
+      service: 
+        name: docker
+        state: started
+
 
     - name: launch rancher
       community.docker.docker_container:
@@ -17,5 +23,3 @@
           - "8443:443"
         volumes:
           - "/host/rancher:/var/lib/rancher"
-          - "/rancher_audit:/var/log/auditlog"
-
