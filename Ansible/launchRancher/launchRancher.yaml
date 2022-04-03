@@ -2,7 +2,7 @@
   gather_facts: False
   tasks: 
     - name: install python-docker
-      shell: pip3 install docker-py
+      shell: pip3 install docker
 
     - name: start daemon docker
       service: 
