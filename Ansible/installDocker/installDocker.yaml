@@ -12,10 +12,9 @@
         state: latest 
 
     - name: add repo
-      yum_repository: 
-        name: docker
-        description: Docker repos
-        baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docer-ce.repo
 
     - name: isntall docker 
       yum: 
