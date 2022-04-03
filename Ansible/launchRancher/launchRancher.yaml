@@ -13,7 +13,7 @@
       community.docker.docker_container:
         name: rancher
         state: started
-        image: 2.3.3
+        image: 'v2.3.3'
         pull: true
         privileged: yes
         restart_policy: unless-stopped
